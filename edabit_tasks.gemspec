@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
-require_relative 'lib/edabit_tasks/version'
+lib = File.expand_path('lib', __dir__)
+$LOAD_PATH.unshift lib unless $LOAD_PATH.include?(lib)
+
+require 'edabit_tasks/version'
 
 Gem::Specification.new do |spec|
   spec.name          = 'edabit_tasks'
@@ -27,7 +30,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_development_dependency 'rake', '~> 12.0'
-  spec.add_development_dependency 'reverse_markdown'
+  spec.add_development_dependency 'reverse_markdown', '~> 2.0.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
-  spec.add_development_dependency 'watir'
+  spec.add_development_dependency 'watir', '~> 6.16.5'
 end
